@@ -1,9 +1,12 @@
 import com.sun.org.apache.regexp.internal.RE;
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Line;
@@ -191,130 +194,89 @@ import javafx.stage.Stage;
 //////        primaryStage.show();
 //////    }
 //////}
-//public class Main extends Application {
-//    private Rectangle rectangle;
-//
-//    // тут прописывается правильный путь до картинки
-//    String crest = getClass().getResource("i_091.png").toExternalForm();
-//    String noll = getClass().getResource("i_091.png").toExternalForm();
-//
-//    @Override
-//    public void start(Stage stage) throws Exception{
-//        GridPane root = new GridPane();
-//// Для отображения сетки
-//        root.setGridLinesVisible(true);
-//        Rectangle rect = new Rectangle(20, 20, 250, 250);
-//        // Заливаем паттерном. Пока тупо картинкой
-//        rect.setFill(new ImagePattern(new Image(crest)));
-//        root.setLayoutX(100);
-//        root.setLayoutY(100);
-//        root.add(rect, 0, 0);
-//        rect.setOnMouseClicked(e -> {
-//            rect.setRotate(34);
-//        });
-//        root.add(new Label("0x1"), 0, 1);
-//        root.add(new Label("1x1"), 1, 1);
-//        root.add(new Label("1x2"), 1, 2);
-//        root.add(new Label("5x5"), 5, 5);
-////        stage.setTitle("Image Pattern");
-////        Group root = new Group();
-//       Scene scene = new Scene(root, 600, 450);
-////
-////        // создаем фигуру, в данном случае прямоугольник
-////        Rectangle rect = new Rectangle(20, 20, 250, 250);
-////        // Заливаем паттерном. Пока тупо картинкой
-////        rect.setFill(new ImagePattern(new Image(crest)));
-////        rect.setOnMouseClicked(e -> {
-////            rect.setFill(new ImagePattern(new Image(noll)));
-////            e.consume();
-////        });
-////
-////        // Добавляем фигуру
-////        root.getChildren().add(rect);
-//        stage.setScene(scene);
-//        stage.show();
-//    }
-//
-//
-//    public static void main(String[] args) {
-//        launch(args);
-//    }
-//}
-//public class Main extends Application {
-//
-//    // тут прописывается правильный путь до картинки
-//    String crest = getClass().getResource("i_091.png").toExternalForm();
-//    String circle = getClass().getResource("circle-thin.png").toExternalForm();
-//
-//    @Override
-//    public void start(Stage stage) throws Exception{
-//        stage.setTitle("Image Pattern");
-//        Group root = new Group();
-//        Scene scene = new Scene(root, 600, 450);
-//
-//        // создаем фигуру, в данном случае прямоугольник
-//        Rectangle rect = new Rectangle(20, 20, 100, 100);
-//        Line line = new Line();
-//        rect.setFill(Color.WHITE);
-//        // Заливаем паттерном. Пока тупо картинкой
-//
-//        rect.setOnMouseClicked(e -> {
-//            rect.setFill(new ImagePattern(new Image(circle)));
-//            e.consume();
-//        });
-//        rect.setOnMouseClicked(l -> {
-//            rect.setFill(new ImagePattern(new Image(crest)));
-//            l.consume();
-//        });
-//
-//        // Добавляем фигуру
-//        root.getChildren().add(rect);
-//        stage.setScene(scene);
-//        stage.show();
-//    }
-//
-//
-//    public static void main(String[] args) {
-//        launch(args);
-//    }
-//}
+
 public class Main extends Application {
+
+    // тут прописывается правильный путь до картинки
+    String crest = getClass().getResource("i_091.png").toExternalForm();
+    String circle = getClass().getResource("circle-thin.png").toExternalForm();
+
     @Override
-    public void start(Stage stage) throws Exception {
-        Rectangle rectangle1 = new Rectangle(0,0,99, 99 );
-        Rectangle rectangle2 = new Rectangle(100,0,99, 99 );
-        Rectangle rectangle3 = new Rectangle(200,0,99, 99 );
-        Rectangle rectangle4 = new Rectangle(0,100,99, 99 );
-        Rectangle rectangle5 = new Rectangle(100,100,99, 99 );
-        Rectangle rectangle6 = new Rectangle(200,100,99, 99 );
-        Rectangle rectangle7 = new Rectangle(0,200,99, 99 );
-        Rectangle rectangle8 = new Rectangle(100,200,99, 99 );
-        Rectangle rectangle9 = new Rectangle(200,200,99, 99 );
-        rectangle1.setFill(Color.WHITE);
-        rectangle2.setFill(Color.WHITE);
-        rectangle3.setFill(Color.WHITE);
-        rectangle4.setFill(Color.WHITE);
-        rectangle5.setFill(Color.WHITE);
-        rectangle6.setFill(Color.WHITE);
-        rectangle7.setFill(Color.WHITE);
-        rectangle8.setFill(Color.WHITE);
-        rectangle9.setFill(Color.WHITE);
+    public void start(Stage stage) throws Exception{
+        Pane pane  = new Pane();
+        for (int i = 0; i < 3; i++){
+            for (int j = 0; j <3; j++){
+                Cube cube = new Cube();
+                cube.setTranslateX(i * 100);
+                cube.setTranslateY(j * 100);
+                pane.getChildren().addAll(cube);
 
-
-        Line line1 = new Line(0, 100, 300, 100);
-        Line line2 = new Line(0, 200, 300, 200);
-        Line line3 = new Line(100, 0, 100, 300);
-        Line line4 = new Line(200, 0, 200, 300);
-
-        Pane pane = new Pane();
-        pane.getChildren().addAll(line1, line2, line3, line4, rectangle1, rectangle2, rectangle3,
-                rectangle4, rectangle5, rectangle6, rectangle7, rectangle8, rectangle9);
+            }
+        }
         Scene scene = new Scene(pane, 300, 300);
         stage.setScene(scene);
         stage.show();
     }
+    private class Cube extends StackPane{
+        public Cube() {
+            Rectangle rectangle = new Rectangle(100, 100, Color.WHITE);
+            rectangle.setStroke(Color.BLACK);
+            setAlignment(Pos.CENTER);
+            getChildren().addAll(rectangle);
+            setOnMouseClicked(e -> {
+                if(e.getButton() == MouseButton.PRIMARY){
+
+                }
+                else {
+                    System.out.println("prim");
+                }
+                e.consume();
+            });
+        }
+    }
+
 
     public static void main(String[] args) {
         launch(args);
     }
 }
+//public class Main extends Application {
+//    @Override
+//    public void start(Stage stage) throws Exception {
+//        Rectangle rectangle1 = new Rectangle(0,0,99, 99 );
+//        Rectangle rectangle2 = new Rectangle(100,0,99, 99 );
+//        Rectangle rectangle3 = new Rectangle(200,0,99, 99 );
+//        Rectangle rectangle4 = new Rectangle(0,100,99, 99 );
+//        Rectangle rectangle5 = new Rectangle(100,100,99, 99 );
+//        Rectangle rectangle6 = new Rectangle(200,100,99, 99 );
+//        Rectangle rectangle7 = new Rectangle(0,200,99, 99 );
+//        Rectangle rectangle8 = new Rectangle(100,200,99, 99 );
+//        Rectangle rectangle9 = new Rectangle(200,200,99, 99 );
+//        rectangle1.setFill(Color.WHITE);
+//        rectangle2.setFill(Color.WHITE);
+//        rectangle3.setFill(Color.WHITE);
+//        rectangle4.setFill(Color.WHITE);
+//        rectangle5.setFill(Color.WHITE);
+//        rectangle6.setFill(Color.WHITE);
+//        rectangle7.setFill(Color.WHITE);
+//        rectangle8.setFill(Color.WHITE);
+//        rectangle9.setFill(Color.WHITE);
+//
+//
+//        Line line1 = new Line(0, 100, 300, 100);
+//        Line line2 = new Line(0, 200, 300, 200);
+//        Line line3 = new Line(100, 0, 100, 300);
+//        Line line4 = new Line(200, 0, 200, 300);
+//
+//        Pane pane = new Pane();
+//        pane.getChildren().addAll(line1, line2, line3, line4, rectangle1, rectangle2, rectangle3,
+//                rectangle4, rectangle5, rectangle6, rectangle7, rectangle8, rectangle9);
+//        Scene scene = new Scene(pane, 300, 300);
+//        stage.setScene(scene);
+//        stage.show();
+//    }
+//
+//    public static void main(String[] args) {
+//        launch(args);
+//    }
+//}
