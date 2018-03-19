@@ -233,7 +233,7 @@ public class Main extends Application {
         }
         //и диагональные
         combos.add(new Combo(board[0][0], board[1][1], board[2][2]));
-       combos.add(new Combo(board[2][0], board[1][1], board[0][2]));
+        combos.add(new Combo(board[2][0], board[1][1], board[0][2]));
 
         return pane;
     }
@@ -245,13 +245,23 @@ public class Main extends Application {
         stage.show();
     }
 
-    public void checkState() {
-        for (Combo combo : combos) {
-            if (combo.isComplete()){
+    private void checkState() {
+        for (int k = 0; k < 8; k++) {
+            if (this.combos.get(k).isComplete()) {
                 playable = false;
-            break;}
+                gameOver(this.combos.get(k));
+                break;
+            }
         }
     }
+
+    private void gameOver (Combo combo){
+        for (Cube cube:
+             combo.cubes) {
+            cube.rectangle.setFill(Color.BLACK);
+        }
+    }
+
 
     public class Combo {
         private Cube[] cubes;
@@ -264,8 +274,8 @@ public class Main extends Application {
             if (cubes[0].getValue() == " ")
                 return false;
 
-                return cubes[0].getValue() == cubes[1].getValue()
-                        && cubes[1].getValue() == cubes[2].getValue();
+            return cubes[0].getValue() == cubes[1].getValue()
+                    && cubes[1].getValue() == cubes[2].getValue();
         }
     }
 
@@ -273,15 +283,19 @@ public class Main extends Application {
         private Image imageX = new Image(crest);
         private Image imageO = new Image(circle);
         private String value = " ";
+        private boolean isPressed = false;
+        Rectangle rectangle = new Rectangle(100, 100, Color.WHITE);
+
 
         public Cube() {
-            Rectangle rectangle = new Rectangle(100, 100, Color.WHITE);
+
             rectangle.setStroke(Color.BLACK);
             setAlignment(Pos.CENTER);
             getChildren().addAll(rectangle);
             setOnMouseClicked(e -> {
+
                 System.out.println(playable + this.value + combos.size());
-                if (!playable)
+                if (!playable || isPressed)
                     return;
                 if (e.getButton() == MouseButton.PRIMARY) {
                     if (!clickedX)
@@ -299,6 +313,7 @@ public class Main extends Application {
                     checkState();
                 }
                 e.consume();
+                this.isPressed = true;
             });
         }
 
