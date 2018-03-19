@@ -216,14 +216,16 @@ public class Main extends Application {
                 Cube cube = new Cube();
                 cube.setTranslateX(i * 100);
                 cube.setTranslateY(j * 100);
-                pane.getChildren().addAll(cube);
+                pane.getChildren().add(cube);
                 board[i][j] = cube;
 
             }
         }
+
+//
         //получим три выигрышные строки
         for (int y = 0; y < 3; y++) {
-            combos.add((new Combo(board[0][y], board[1][y], board[2][y])));
+            combos.add(new Combo(board[0][y], board[1][y], board[2][y]));
         }
         //теперь три выигрышных столбца
         for (int x = 0; x < 3; x++) {
@@ -231,7 +233,7 @@ public class Main extends Application {
         }
         //и диагональные
         combos.add(new Combo(board[0][0], board[1][1], board[2][2]));
-        combos.add(new Combo(board[2][0], board[1][1], board[0][2]));
+       combos.add(new Combo(board[2][0], board[1][1], board[0][2]));
 
         return pane;
     }
@@ -245,9 +247,9 @@ public class Main extends Application {
 
     public void checkState() {
         for (Combo combo : combos) {
-            if (combo.isComplete())
+            if (combo.isComplete()){
                 playable = false;
-            break;
+            break;}
         }
     }
 
@@ -261,8 +263,9 @@ public class Main extends Application {
         public boolean isComplete() {
             if (cubes[0].getValue() == " ")
                 return false;
-            else
-                return cubes[0].getValue() == cubes[1].getValue() && cubes[1].getValue() == cubes[2].getValue();
+
+                return cubes[0].getValue() == cubes[1].getValue()
+                        && cubes[1].getValue() == cubes[2].getValue();
         }
     }
 
@@ -277,7 +280,7 @@ public class Main extends Application {
             setAlignment(Pos.CENTER);
             getChildren().addAll(rectangle);
             setOnMouseClicked(e -> {
-                System.out.println(playable + this.value);
+                System.out.println(playable + this.value + combos.size());
                 if (!playable)
                     return;
                 if (e.getButton() == MouseButton.PRIMARY) {
