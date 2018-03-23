@@ -16,7 +16,7 @@ public class Main extends Application {
     static int xWon = 0;
     static int oWon = 0;
     static Stage stage;
-    static Stage scoreStage;
+    static Stage scoreStage = new Stage();
     static boolean clickedX = true;
     static boolean playable = true;
     static List<Combo> combos = new ArrayList<>();
@@ -82,10 +82,9 @@ public class Main extends Application {
         Stage stage1 = new Stage();
         stage1.setScene(new Scene(getFinalScene(stage1), 200, 100));
         stage1.show();
-        scoreStage = new Stage();
-
-        scoreStage.setX(900);
-        scoreStage.setScene(new Scene(getScoreScene(), 100, 200));
+        scoreStage.setX(870);
+        scoreStage.setY(180);
+        scoreStage.setScene(new Scene(getScoreScene(), 100, 100));
         scoreStage.show();
     }
 
@@ -129,10 +128,10 @@ public class Main extends Application {
     }
 
     static public Parent getScoreScene (){
-        Text xWins = new Text("X has won :" + xWon);
-        Text oWins = new Text("O has won" + oWon);
-        xWins.setLayoutY(100);
-        oWins.setLayoutY(150);
+        Text xWins = new Text(" X has won : " + xWon);
+        Text oWins = new Text(" O has won : " + oWon);
+        xWins.setLayoutY(33);
+        oWins.setLayoutY(66);
 
         return new Pane(xWins, oWins);
     }
