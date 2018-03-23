@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6da121fe-93ae-4248-a36d-537075e4e0de" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Combo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Cube.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/deskApp/Main$Combo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/deskApp/Main$Cube.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/deskApp/Main.class" afterPath="$PROJECT_DIR$/out/production/deskApp/Main.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/descApp/circle-thin — копия.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/descApp/circle-thin — копия 2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/descApp/i_091 — копия.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/descApp/i_091 — копия 2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/deskApp/Main.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cube.java" afterPath="$PROJECT_DIR$/src/Cube.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,12 +24,12 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+            <state relative-caret-position="251">
+              <caret line="89" column="23" lean-forward="false" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1521484654000" expanded="true" signature="1019:1132" ph="..." />
-                <marker date="1521484654000" expanded="true" signature="1390:1459" ph="..." />
+                <marker date="1521841046000" expanded="false" signature="3375:3386" ph=" { " />
+                <marker date="1521841046000" expanded="false" signature="3399:3405" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -37,12 +38,9 @@
       <file leaf-file-name="Combo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Combo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-              <folding>
-                <element signature="e#65#66#0" expanded="true" />
-                <element signature="e#99#100#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -50,13 +48,9 @@
       <file leaf-file-name="Cube.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Cube.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1682#1683#0" expanded="true" />
-                <element signature="e#1715#1716#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-42">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -82,17 +76,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Cube.java" />
         <option value="$PROJECT_DIR$/src/Combo.java" />
+        <option value="$PROJECT_DIR$/src/Cube.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="32" />
-    <option name="y" value="23" />
-    <option name="width" value="793" />
-    <option name="height" value="797" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -109,8 +101,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -127,8 +117,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -294,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521482748670</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="separated classes Cube and Combo from Main">
+      <created>1521484700219</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1521484700219</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -309,8 +308,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07294118" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17764705" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -319,8 +318,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -367,6 +366,32 @@
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -376,7 +401,8 @@
     <MESSAGE value="&quot;ONLY first horizontal combo is working&quot; problem fixed" />
     <MESSAGE value="game more-less complete" />
     <MESSAGE value="game more-less complete(deleted commented)" />
-    <option name="LAST_COMMIT_MESSAGE" value="game more-less complete(deleted commented)" />
+    <MESSAGE value="separated classes Cube and Combo from Main" />
+    <option name="LAST_COMMIT_MESSAGE" value="separated classes Cube and Combo from Main" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -389,8 +415,80 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1521484654000" expanded="true" signature="1019:1132" ph="..." />
-            <marker date="1521484654000" expanded="true" signature="1390:1459" ph="..." />
+            <marker date="1521841046000" expanded="false" signature="3375:3386" ph=" { " />
+            <marker date="1521841046000" expanded="false" signature="3399:3405" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/javafx-src.zip!/javafx/application/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4425">
+          <caret line="295" column="68" lean-forward="false" selection-start-line="295" selection-start-column="68" selection-end-line="295" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Combo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cube.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="33" column="23" lean-forward="false" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/javafx-src.zip!/javafx/application/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3900">
+          <caret line="295" column="68" lean-forward="true" selection-start-line="295" selection-start-column="68" selection-end-line="295" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1521841046000" expanded="false" signature="3375:3386" ph=" { " />
+            <marker date="1521841046000" expanded="false" signature="3399:3405" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Combo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cube.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="23" lean-forward="false" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1521841046000" expanded="false" signature="3375:3386" ph=" { " />
+            <marker date="1521841046000" expanded="false" signature="3399:3405" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -401,8 +499,8 @@
           <caret line="284" column="64" lean-forward="false" selection-start-line="284" selection-start-column="64" selection-end-line="284" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1521484654000" expanded="true" signature="1019:1132" ph="..." />
-            <marker date="1521484654000" expanded="true" signature="1390:1459" ph="..." />
+            <marker date="1521841046000" expanded="false" signature="3375:3386" ph=" { " />
+            <marker date="1521841046000" expanded="false" signature="3399:3405" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -413,8 +511,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1521484654000" expanded="true" signature="1019:1132" ph="..." />
-            <marker date="1521484654000" expanded="true" signature="1390:1459" ph="..." />
+            <marker date="1521841046000" expanded="false" signature="3375:3386" ph=" { " />
+            <marker date="1521841046000" expanded="false" signature="3399:3405" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -425,8 +523,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1521484654000" expanded="true" signature="1019:1132" ph="..." />
-            <marker date="1521484654000" expanded="true" signature="1390:1459" ph="..." />
+            <marker date="1521841046000" expanded="false" signature="3375:3386" ph=" { " />
+            <marker date="1521841046000" expanded="false" signature="3399:3405" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -437,8 +535,8 @@
           <caret line="252" column="28" lean-forward="false" selection-start-line="252" selection-start-column="28" selection-end-line="252" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1521484654000" expanded="true" signature="1019:1132" ph="..." />
-            <marker date="1521484654000" expanded="true" signature="1390:1459" ph="..." />
+            <marker date="1521841046000" expanded="false" signature="3375:3386" ph=" { " />
+            <marker date="1521841046000" expanded="false" signature="3399:3405" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -449,8 +547,8 @@
           <caret line="238" column="0" lean-forward="true" selection-start-line="193" selection-start-column="0" selection-end-line="238" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1521484654000" expanded="true" signature="1019:1132" ph="..." />
-            <marker date="1521484654000" expanded="true" signature="1390:1459" ph="..." />
+            <marker date="1521841046000" expanded="false" signature="3375:3386" ph=" { " />
+            <marker date="1521841046000" expanded="false" signature="3399:3405" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -461,8 +559,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1521484654000" expanded="true" signature="1019:1132" ph="..." />
-            <marker date="1521484654000" expanded="true" signature="1390:1459" ph="..." />
+            <marker date="1521841046000" expanded="false" signature="3375:3386" ph=" { " />
+            <marker date="1521841046000" expanded="false" signature="3399:3405" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -481,37 +579,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/javafx-src.zip!/javafx/scene/layout/Pane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="124" column="5" lean-forward="true" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
+          <folding>
+            <element signature="e#3912#3913#0" expanded="false" />
+            <element signature="e#3935#3936#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-894">
+          <caret line="381" column="29" lean-forward="false" selection-start-line="381" selection-start-column="29" selection-end-line="381" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/javafx-src.zip!/javafx/application/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="295" column="68" lean-forward="false" selection-start-line="295" selection-start-column="68" selection-end-line="295" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Cube.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1682#1683#0" expanded="true" />
-            <element signature="e#1715#1716#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-42">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Combo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <element signature="e#65#66#0" expanded="true" />
-            <element signature="e#99#100#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        <state relative-caret-position="251">
+          <caret line="89" column="23" lean-forward="false" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1521484654000" expanded="true" signature="1019:1132" ph="..." />
-            <marker date="1521484654000" expanded="true" signature="1390:1459" ph="..." />
+            <marker date="1521841046000" expanded="false" signature="3375:3386" ph=" { " />
+            <marker date="1521841046000" expanded="false" signature="3399:3405" ph=" }" />
           </folding>
         </state>
       </provider>

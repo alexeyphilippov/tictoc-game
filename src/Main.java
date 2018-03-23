@@ -2,13 +2,18 @@
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main extends Application {
+    static Stage stage;
     static boolean clickedX = true;
     static boolean playable = true;
     static List<Combo> combos = new ArrayList<>();
@@ -19,6 +24,7 @@ public class Main extends Application {
 
     private Parent createContent() {
         Pane pane = new Pane();
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 Cube cube = new Cube(string1, string2);
@@ -46,19 +52,31 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setScene(new Scene(createContent(), 600, 600));
+        this.stage = stage;
+        stage.setResizable(false);
+        stage.setScene(new Scene(createContent(), 300, 300));
         stage.show();
+
+
     }
 
-    static void checkState() {
+   static void checkState() {
         for (int k = 0; k < 8; k++) {
             if (combos.get(k).isComplete()) {
                 playable = false;
                 gameOver(combos.get(k));
+                win();
                 break;
             }
         }
     }
+
+static void win(){
+        Stage stage = new Stage();
+       stage.setScene(new Scene(getFinalScene(stage), 200, 100));
+       stage.show();
+
+}
 
     private static void gameOver(Combo combo) {
         for (Cube cube :
@@ -66,7 +84,35 @@ public class Main extends Application {
             cube.rectangle.setFill(Color.BLACK);
         }
     }
-
+ static public Parent getFinalScene (Stage stage1){
+     Text text = new Text("Wanna play again?");
+     text.setLayoutY(30);
+     text.setLayoutX(50);
+     text.setTextAlignment(TextAlignment.CENTER);
+    Button buttonYes =  new Button("yes");
+    Button buttonNo =  new Button("no");
+    buttonNo.setLayoutY(50);
+    buttonNo.setLayoutX(50);
+    buttonYes.setLayoutY(50);
+    buttonYes.setLayoutX(125);
+    buttonYes.setOnMouseClicked(e ->{
+        combos = new ArrayList<>();
+        playable = true;
+        clickedX = true;
+        stage.close();
+        try {
+            new Main().start(new Stage());
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        stage1.close();
+    });
+    buttonNo.setOnMouseClicked(e -> {
+        stage.close();
+        stage1.close();
+    });
+            return new Pane(buttonNo, buttonYes, text);
+}
 
     public static void main(String[] args) {
         launch(args);

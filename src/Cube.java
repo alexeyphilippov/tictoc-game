@@ -23,7 +23,6 @@ public  class Cube extends StackPane {
         getChildren().addAll(rectangle);
         setOnMouseClicked(e -> {
 
-            System.out.println(Main.playable + this.value + Main.combos.size());
             if (!Main.playable || isPressed)
                 return;
             if (e.getButton() == MouseButton.PRIMARY) {
