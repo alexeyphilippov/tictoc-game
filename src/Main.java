@@ -3,17 +3,20 @@ import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main extends Application {
+    static int xWon = 0;
+    static int oWon = 0;
     static Stage stage;
+    static Stage scoreStage;
     static boolean clickedX = true;
     static boolean playable = true;
     static List<Combo> combos = new ArrayList<>();
@@ -60,23 +63,31 @@ public class Main extends Application {
 
     }
 
-   static void checkState() {
+    static void checkState() {
         for (int k = 0; k < 8; k++) {
             if (combos.get(k).isComplete()) {
                 playable = false;
                 gameOver(combos.get(k));
+                if(combos.get(k).cubes[1].getValue() == "x")
+                    xWon ++;
+                else
+                    oWon ++;
                 win();
                 break;
             }
         }
     }
 
-static void win(){
-        Stage stage = new Stage();
-       stage.setScene(new Scene(getFinalScene(stage), 200, 100));
-       stage.show();
+    static void win() {
+        Stage stage1 = new Stage();
+        stage1.setScene(new Scene(getFinalScene(stage1), 200, 100));
+        stage1.show();
+        scoreStage = new Stage();
 
-}
+        scoreStage.setX(900);
+        scoreStage.setScene(new Scene(getScoreScene(), 100, 200));
+        scoreStage.show();
+    }
 
     private static void gameOver(Combo combo) {
         for (Cube cube :
@@ -84,35 +95,47 @@ static void win(){
             cube.rectangle.setFill(Color.BLACK);
         }
     }
- static public Parent getFinalScene (Stage stage1){
-     Text text = new Text("Wanna play again?");
-     text.setLayoutY(30);
-     text.setLayoutX(50);
-     text.setTextAlignment(TextAlignment.CENTER);
-    Button buttonYes =  new Button("yes");
-    Button buttonNo =  new Button("no");
-    buttonNo.setLayoutY(50);
-    buttonNo.setLayoutX(50);
-    buttonYes.setLayoutY(50);
-    buttonYes.setLayoutX(125);
-    buttonYes.setOnMouseClicked(e ->{
-        combos = new ArrayList<>();
-        playable = true;
-        clickedX = true;
-        stage.close();
-        try {
-            new Main().start(new Stage());
-        } catch (Exception e1) {
-            e1.printStackTrace();
-        }
-        stage1.close();
-    });
-    buttonNo.setOnMouseClicked(e -> {
-        stage.close();
-        stage1.close();
-    });
-            return new Pane(buttonNo, buttonYes, text);
-}
+
+    static public Parent getFinalScene(Stage stage1) {
+        Text text = new Text("Wanna play again?");
+        text.setLayoutY(30);
+        text.setLayoutX(50);
+        text.setTextAlignment(TextAlignment.CENTER);
+        Button buttonYes = new Button("yes");
+        Button buttonNo = new Button("no");
+        buttonNo.setLayoutY(50);
+        buttonNo.setLayoutX(50);
+        buttonYes.setLayoutY(50);
+        buttonYes.setLayoutX(125);
+        buttonYes.setOnMouseClicked(e -> {
+            combos = new ArrayList<>();
+            playable = true;
+            clickedX = true;
+            stage.close();
+            try {
+                new Main().start(new Stage());
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+            stage1.close();
+
+        });
+        buttonNo.setOnMouseClicked(e -> {
+            stage.close();
+            stage1.close();
+            scoreStage.close();
+        });
+        return new Pane(buttonNo, buttonYes, text);
+    }
+
+    static public Parent getScoreScene (){
+        Text xWins = new Text("X has won :" + xWon);
+        Text oWins = new Text("O has won" + oWon);
+        xWins.setLayoutY(100);
+        oWins.setLayoutY(150);
+
+        return new Pane(xWins, oWins);
+    }
 
     public static void main(String[] args) {
         launch(args);
