@@ -13,31 +13,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main extends Application {
+    static int drawWon = 0;
     static int xWon = 0;
     static int oWon = 0;
     static Stage stage;
-    static Stage scoreStage = new Stage();
     static boolean clickedX = true;
     static boolean playable = true;
     static List<Combo> combos = new ArrayList<>();
-    Cube[][] board = new Cube[3][3];
+    static Cube[][] board = new Cube[3][3];
     // тут прописывается правильный путь до картинки
-    String string1 = "i_091.png";
-    String string2 = "circle-thin.png";
+
 
     private Parent createContent() {
         Pane pane = new Pane();
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                Cube cube = new Cube(string1, string2);
+                Cube cube = new Cube();
                 cube.setTranslateX(i * 100);
                 cube.setTranslateY(j * 100);
                 pane.getChildren().add(cube);
                 board[i][j] = cube;
-
             }
         }
+        Score score = new Score();
+        pane.getChildren().add(score.getScorePane());
 
         //получим три выигрышные строки
         for (int y = 0; y < 3; y++) {
@@ -57,10 +57,41 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         this.stage = stage;
         stage.setResizable(false);
-        stage.setScene(new Scene(createContent(), 300, 300));
+        stage.setScene(new Scene(createContent(), 400, 300));
         stage.show();
 
 
+    }
+
+    static void checkDraw() {
+        int n = 0;
+        for (int k = 0; k < 8; k++) {
+            if (!combos.get(k).isComplete() && isEverythingFilled()) {
+                n++;
+            }
+        }
+        if (n == 8){
+            drawWon++;
+            win();
+        }
+    }
+
+    static boolean isEverythingFilled() {
+        int k = 0;
+        boolean isFilled = true;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j].getValue() == " ") {
+                    k++;
+                }
+            }
+            if (k == 0) {
+                isFilled = true;
+            } else {
+                isFilled = false;
+            }
+        }
+        return isFilled;
     }
 
     static void checkState() {
@@ -68,10 +99,10 @@ public class Main extends Application {
             if (combos.get(k).isComplete()) {
                 playable = false;
                 gameOver(combos.get(k));
-                if(combos.get(k).cubes[1].getValue() == "x")
-                    xWon ++;
+                if (combos.get(k).cubes[1].getValue() == "x")
+                    xWon++;
                 else
-                    oWon ++;
+                    oWon++;
                 win();
                 break;
             }
@@ -82,10 +113,6 @@ public class Main extends Application {
         Stage stage1 = new Stage();
         stage1.setScene(new Scene(getFinalScene(stage1), 200, 100));
         stage1.show();
-        scoreStage.setX(870);
-        scoreStage.setY(180);
-        scoreStage.setScene(new Scene(getScoreScene(), 100, 100));
-        scoreStage.show();
     }
 
     private static void gameOver(Combo combo) {
@@ -96,7 +123,16 @@ public class Main extends Application {
     }
 
     static public Parent getFinalScene(Stage stage1) {
-        Text text = new Text("Wanna play again?");
+        String whoWonString;
+        if (clickedX) {
+            whoWonString = "X player won!";
+        } else if(drawWon != 0){
+            whoWonString = "draw!";
+        }
+        else {
+            whoWonString = "O player won!";
+        }
+        Text text = new Text(whoWonString + "\nWanna play again?");
         text.setLayoutY(30);
         text.setLayoutX(50);
         text.setTextAlignment(TextAlignment.CENTER);
@@ -112,7 +148,7 @@ public class Main extends Application {
             clickedX = true;
             stage.close();
             try {
-                new Main().start(new Stage());
+                new Main().start(stage);
             } catch (Exception e1) {
                 e1.printStackTrace();
             }
@@ -122,19 +158,10 @@ public class Main extends Application {
         buttonNo.setOnMouseClicked(e -> {
             stage.close();
             stage1.close();
-            scoreStage.close();
         });
         return new Pane(buttonNo, buttonYes, text);
     }
 
-    static public Parent getScoreScene (){
-        Text xWins = new Text(" X has won : " + xWon);
-        Text oWins = new Text(" O has won : " + oWon);
-        xWins.setLayoutY(33);
-        oWins.setLayoutY(66);
-
-        return new Pane(xWins, oWins);
-    }
 
     public static void main(String[] args) {
         launch(args);

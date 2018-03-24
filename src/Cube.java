@@ -6,18 +6,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
-public  class Cube extends StackPane {
 
+public  class Cube extends StackPane {
+    final String crestPath = "i_091.png";
+    final String circlePath = "circle-thin.png";
     private String value = " ";
     private boolean isPressed = false;
     Rectangle rectangle = new Rectangle(100, 100, Color.WHITE);
 
-    public Cube(String image1, String image2) {
+    public Cube() {
 
-        String crest = getClass().getResource("i_091.png").toExternalForm();
-        String circle = getClass().getResource("circle-thin.png").toExternalForm();
-        Image imageX = new Image(crest);
-        Image imageO = new Image(circle);
         rectangle.setStroke(Color.BLACK);
         setAlignment(Pos.CENTER);
         getChildren().addAll(rectangle);
@@ -28,17 +26,19 @@ public  class Cube extends StackPane {
             if (e.getButton() == MouseButton.PRIMARY) {
                 if (!Main.clickedX)
                     return;
-                rectangle.setFill(new ImagePattern(imageX));
+                rectangle.setFill(new ImagePattern(new Image(getClass().getResource(crestPath).toExternalForm())));
                 this.value = "x";
                 Main.clickedX = false;
                 Main.checkState();
+                Main.checkDraw();
             } else {
                 if (Main.clickedX)
                     return;
-                rectangle.setFill(new ImagePattern(imageO));
+                rectangle.setFill(new ImagePattern(new Image(getClass().getResource(circlePath).toExternalForm())));
                 this.value = "o";
                 Main.clickedX = true;
                 Main.checkState();
+                Main.checkDraw();
             }
             e.consume();
             this.isPressed = true;
